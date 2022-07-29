@@ -1,0 +1,36 @@
+int arranque=0;
+int enclavamiento=0;
+int paro=0;
+int estado=0;
+
+void setup() {
+
+pinMode(2,INPUT);
+pinMode(3, INPUT);
+pinMode(13, OUTPUT);
+  
+}
+
+void loop() {
+
+arranque=digitalRead(2);
+paro=digitalRead(3);
+enclavamiento=estado;
+
+if(arranque==HIGH){
+
+  estado=1;
+
+    }
+
+   if(estado==1){
+    digitalWrite(13, LOW); 
+  }
+    else {
+    digitalWrite(13,HIGH);  
+ }
+  if(paro==HIGH){
+    estado=0;
+  }
+  delay(100);
+}
